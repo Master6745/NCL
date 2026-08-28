@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <!-- Character encoding so emojis & symbols display correctly -->
   <meta charset="UTF-8">
-
-  <!-- Responsive layout viewport for mobile, tablet, and desktop screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Browser tab title -->
   <title>Nalanda Concept School | SD Education</title>
-
-  <!-- Tailwind CSS CDN for instant styling -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-gray-800 font-sans">
 
-  <!-- ========================================== -->
+<!-- ========================================== -->
   <!-- 1. TOP ANNOUNCEMENT BANNER                  -->
   <!-- ========================================== -->
   <div class="bg-blue-900 text-white text-xs sm:text-sm py-2.5 px-4 flex flex-wrap items-center justify-center gap-3 font-medium text-center shadow-inner">
     <!-- Enroll Button -->
-    <a href="admissions.html" class="bg-red-600 hover:bg-red-700 text-white font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide transition shadow-sm">
+    <button onclick="openAdmissionModal()" class="bg-red-600 hover:bg-red-700 text-white font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide transition shadow-sm cursor-pointer">
       Enroll Now
-    </a>
+    </button>
 
     <!-- Notice Text from Poster -->
     <span>
       📢 <strong>Admissions Open 2026–27</strong> | Classes: <strong>I to VIth</strong> | Preparation for Navodaya, Netarhat, Simultala, R.K. Mission & Sainik School
     </span>
   </div>
-
 
   <!-- ========================================== -->
   <!-- 2. MAIN NAVIGATION HEADER                   -->
@@ -39,7 +32,6 @@
       
       <!-- School Logo & Name -->
       <div class="flex items-center space-x-3">
-        <!-- Local Logo Image -->
         <img 
           src="images/logo.png" 
           alt="Nalanda Concept School Logo" 
@@ -89,25 +81,19 @@
     </div>
   </header>
 
-
-  
   <!-- ========================================== -->
-  <!-- 4. DYNAMIC CAMPUS GALLERY SLIDER           -->
+  <!-- 3. DYNAMIC CAMPUS GALLERY SLIDER           -->
   <!-- ========================================== -->
-  <section class="py-12 bg-white border-t border-gray-100">
+  <section id="gallery" class="py-12 bg-white border-t border-gray-100">
     <div class="max-w-6xl mx-auto px-4">
       
-      <!-- Section Title -->
       <div class="text-center mb-8">
         <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-1">Campus Life</span>
         <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Explore Our Campus</h3>
         <p class="text-sm text-gray-500 mt-1">Glimpses of daily activities, modern labs, and student life</p>
       </div>
 
-      <!-- Slider Container -->
       <div class="relative max-w-4xl mx-auto h-64 sm:h-96 rounded-2xl overflow-hidden shadow-xl">
-        
-        <!-- Slide 1 -->
         <div class="gallery-slide active duration-700 ease-in-out absolute inset-0 transition-opacity">
           <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80" alt="School Building" class="w-full h-full object-cover">
           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
@@ -116,7 +102,6 @@
           </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="gallery-slide duration-700 ease-in-out absolute inset-0 transition-opacity opacity-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80" alt="Smart Classrooms" class="w-full h-full object-cover">
           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
@@ -125,7 +110,6 @@
           </div>
         </div>
 
-        <!-- Slide 3 -->
         <div class="gallery-slide duration-700 ease-in-out absolute inset-0 transition-opacity opacity-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80" alt="Digital Library" class="w-full h-full object-cover">
           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
@@ -134,7 +118,6 @@
           </div>
         </div>
 
-        <!-- Slide 4 -->
         <div class="gallery-slide duration-700 ease-in-out absolute inset-0 transition-opacity opacity-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80" alt="Sports Grounds" class="w-full h-full object-cover">
           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
@@ -143,130 +126,205 @@
           </div>
         </div>
 
-        <!-- Slider Dots -->
         <div class="absolute bottom-3 right-6 flex space-x-2 z-10" id="slider-dots">
           <button class="dot w-3 h-3 rounded-full bg-white transition"></button>
           <button class="dot w-3 h-3 rounded-full bg-white/50 transition"></button>
           <button class="dot w-3 h-3 rounded-full bg-white/50 transition"></button>
           <button class="dot w-3 h-3 rounded-full bg-white/50 transition"></button>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. KEY HIGHLIGHTS & FEATURES SECTION       -->
+  <!-- ========================================== -->
+  <section id="features" class="py-14 bg-slate-50 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-1">Why Choose Us</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Salient Campus Features</h3>
+        <p class="text-sm text-gray-500 mt-1">Specialized environment tailored for Class I to VIth excellence</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Feature 1 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center text-2xl mb-4">
+            👨‍🏫
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-1">Expert Faculty</h4>
+          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Highly experienced subject mentors dedicated to solidifying fundamental concepts and critical problem-solving skills.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-sky-100 text-sky-800 rounded-xl flex items-center justify-center text-2xl mb-4">
+            💡
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-1">Advance Teaching Technics</h4>
+          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Modern audio-visual pedagogy, activity-based workshops, and personalized attention per student.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-800 rounded-xl flex items-center justify-center text-2xl mb-4">
+            💻
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-1">Smart Computer Lab</h4>
+          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            High-tech digital systems enabling early exposure to computer literacy and digital learning assessments.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-rose-100 text-rose-800 rounded-xl flex items-center justify-center text-2xl mb-4">
+            🎯
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-1">Competitive Approach</h4>
+          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Targeted preparation for Navodaya, Netarhat, Simultala, R.K. Mission, and Sainik School exams.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-2xl mb-4">
+            📚
+          </div>
+          <h4 class="text-lg font-bold text-gray-900 mb-1">Digital Library</h4>
+          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Extensive collection of reference materials, question banks, and reading resources for young scholars.
+          </p>
+        </div>
+
+        <!-- Feature 6 (Admission Action Card) -->
+        <div class="bg-gradient-to-br from-emerald-800 to-teal-900 p-6 rounded-2xl shadow-md text-white flex flex-col justify-between">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-widest bg-emerald-700/80 px-2.5 py-1 rounded-full">Session 2026–27</span>
+            <h4 class="text-lg font-bold mt-3 mb-1">Join Nalanda Concept School</h4>
+            <p class="text-xs text-emerald-100 leading-relaxed">
+              Limited seats are available for Classes I to VI. Reserve a place for your child today.
+            </p>
+          </div>
+          <button onclick="openAdmissionModal()" class="mt-4 bg-amber-400 hover:bg-amber-300 text-gray-900 font-bold text-xs py-2.5 px-4 rounded-xl text-center transition cursor-pointer">
+            Apply for Admission →
+          </button>
+        </div>
 
       </div>
 
     </div>
   </section>
+
   <!-- ========================================== -->
-  <!-- 4. LEADERSHIP & FOUNDERS' VISION           -->
+  <!-- 5. LEADERSHIP & FOUNDERS' VISION           -->
   <!-- ========================================== -->
-  <section class="py-14 bg-[#f3ece0] border-t border-[#d8cbbb]">
+  <section id="vision" class="py-14 bg-[#f3ece0] border-t border-[#d8cbbb]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
 
-      <!-- Section Title -->
       <div class="text-center">
         <span class="text-xs font-bold text-emerald-800 uppercase tracking-widest block mb-1">Guiding Vision</span>
         <h3 class="text-2xl sm:text-3xl font-extrabold text-emerald-950">Words of Inspiration</h3>
         <div class="w-16 h-1 bg-emerald-800 mx-auto mt-2 rounded"></div>
       </div>
 
-      <!-- Card 1: Principal (Photo on Right, Text on Left) -->
+      <!-- Card 1: Principal -->
       <div class="bg-[#efe5d5] border border-[#d6c3ad] rounded-2xl p-6 sm:p-8 shadow-sm">
         <div class="flex flex-col-reverse md:flex-row items-center gap-8">
-          
-          <!-- Text on Left -->
           <div class="w-full md:w-3/5 space-y-3">
-            <h4 class="text-2xl font-bold text-emerald-900 tracking-wide font-serif">
-              Director's Message
-            </h4>
-            <p class="text-xs font-bold text-red-700 uppercase tracking-widest">
-              Co-Founder & Director, Nalanda Concept School
-            </p>
+            <h4 class="text-2xl font-bold text-emerald-900 tracking-wide font-serif">Principal's Message</h4>
+            <p class="text-xs font-bold text-red-700 uppercase tracking-widest">Principal, Nalanda Concept School</p>
             <p class="text-sm sm:text-base text-gray-800 leading-relaxed font-serif text-justify pt-1">
               "True education transcends textbooks; it is the art of building resilient character, curiosity, and independent thought. At Nalanda Concept School, we focus on crystal-clear fundamentals from Classes I to VI, ensuring each young mind builds the confidence and discipline required to conquer elite competitive exams like Navodaya, Sainik, Netarhat, and beyond."
             </p>
           </div>
-
-          <!-- Photo on Right with White Paper-Edge Frame -->
           <div class="w-full md:w-2/5 flex justify-center">
             <div class="bg-white p-2.5 rounded-lg shadow-md rotate-1 hover:rotate-0 transition duration-300 border border-gray-300 max-w-xs w-full">
-              <div class="h-56 sm:h-64 overflow-hidden rounded">
-                <!-- Replace src with your Principal's photo -->
-                <img src="images\founder.jpeg">
+              <div class="h-56 sm:h-64 overflow-hidden rounded bg-gray-100 flex items-center justify-center">
+                <img 
+                  src="images/founder.jpeg" 
+                  alt="Principal" 
+                  class="w-full h-full object-cover"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80';"
+                >
               </div>
-              <p class="text-center text-xs font-bold text-gray-700 mt-2 font-serif">Akhilesh Kumar</p>
+              <p class="text-center text-xs font-bold text-gray-700 mt-2 font-serif">Principal</p>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- Card 2: Co-Founder (Photo on Left, Text on Right) -->
+      <!-- Card 2: Co-Founder -->
       <div class="bg-[#efe5d5] border border-[#d6c3ad] rounded-2xl p-6 sm:p-8 shadow-sm">
         <div class="flex flex-col md:flex-row items-center gap-8">
-          
-          <!-- Photo on Left with White Paper-Edge Frame -->
           <div class="w-full md:w-2/5 flex justify-center">
             <div class="bg-white p-2.5 rounded-lg shadow-md -rotate-1 hover:rotate-0 transition duration-300 border border-gray-300 max-w-xs w-full">
-              <div class="h-56 sm:h-64 overflow-hidden rounded">
-                <!-- Replace src with your Co-founder's photo -->
-                <img src="images/Nishant_blazer.jpeg" alt="Co-Founder" class="w-full h-full object-cover">
+              <div class="h-56 sm:h-64 overflow-hidden rounded bg-gray-100 flex items-center justify-center">
+                <img 
+                  src="images/Nishant_blazer.jpeg" 
+                  alt="Co-Founder" 
+                  class="w-full h-full object-cover"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80';"
+                >
               </div>
               <p class="text-center text-xs font-bold text-gray-700 mt-2 font-serif">Nishant Ranjan</p>
             </div>
           </div>
-
-          <!-- Text on Right -->
           <div class="w-full md:w-3/5 space-y-3">
-            <h4 class="text-2xl font-bold text-emerald-900 tracking-wide font-serif">
-              Co-Founder's Vision
-            </h4>
-            <p class="text-xs font-bold text-red-700 uppercase tracking-widest">
-              Co-Founder & Director, Nalanda Concept School
-            </p>
+            <h4 class="text-2xl font-bold text-emerald-900 tracking-wide font-serif">Co-Founder's Vision</h4>
+            <p class="text-xs font-bold text-red-700 uppercase tracking-widest">Co-Founder & Director, SD Education</p>
             <p class="text-sm sm:text-base text-gray-800 leading-relaxed font-serif text-justify pt-1">
               "We founded this institution with a single resolute mission: to provide world-class conceptual clarity and mentorship to every young aspirant. With advanced teaching techniques, smart computer labs, and a competitive approach, our commitment is to provide equal opportunity and transformative guidance so every student achieves their fullest potential."
             </p>
           </div>
-
         </div>
       </div>
 
     </div>
   </section>
+
   <!-- ========================================== -->
-  <!-- 5. FOOTER SECTION                          -->
+  <!-- 6. FOOTER SECTION                          -->
   <!-- ========================================== -->
-  <footer class="bg-[#0b2b1a] text-white pt-12 pb-6 border-t-2 border-emerald-900">
+  <footer id="contact" class="bg-[#0b2b1a] text-white pt-12 pb-6 border-t-2 border-emerald-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       
-      <!-- 5-Column Grid Layout -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10">
         
         <!-- Column 1: Quick Links -->
         <div class="space-y-4">
           <h4 class="text-amber-400 font-bold text-base tracking-wide">Quick Links</h4>
           <ul class="space-y-2 text-sm text-gray-200">
-            <li><a href="admissions.html" class="hover:text-amber-300 transition">Admission</a></li>
-            <li><a href="gallery.html" class="hover:text-amber-300 transition">Photos</a></li>
-            <li><a href="gallery.html" class="hover:text-amber-300 transition">Videos</a></li>
-            <li><a href="admissions.html" class="hover:text-amber-300 transition">Fee Payment</a></li>
+            <li><button onclick="openAdmissionModal()" class="hover:text-amber-300 transition text-left">Admission Form</button></li>
+            <li><a href="#gallery" class="hover:text-amber-300 transition block">Campus Photos</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition block">Facilities</a></li>
+            <li><button onclick="openAdmissionModal()" class="hover:text-amber-300 transition text-left">Fee Inquiry</button></li>
           </ul>
         </div>
 
-        <!-- Column 2: Our Programs / Activities -->
-        <div>
+        <!-- Column 2: Our Programs -->
+        <div id="programs">
           <h4 class="text-amber-400 font-bold text-base tracking-wide mb-4">Our Programs</h4>
           <ul class="space-y-2.5 text-sm text-gray-200">
-            <li><a href="academics.html" class="hover:text-amber-300 transition">Concept School (Class I–VI)</a></li>
-            <li><a href="competitive.html" class="hover:text-amber-300 transition">Navodaya Preparation</a></li>
-            <li><a href="competitive.html" class="hover:text-amber-300 transition">Sainik School Wing</a></li>
-            <li><a href="competitive.html" class="hover:text-amber-300 transition">Netarhat & Simultala Prep</a></li>
-            <li><a href="facilities.html" class="hover:text-amber-300 transition">Smart Computer Lab</a></li>
-            <li><a href="facilities.html" class="hover:text-amber-300 transition">Digital Library</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition">Concept School (Class I–VI)</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition">Navodaya Preparation</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition">Sainik School Wing</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition">Netarhat & Simultala Prep</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition">Smart Computer Lab</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition">Digital Library</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Google Map Embed -->
-        <!-- Column 3: Google Map Embed -->
+        <!-- Column 3: Location Map -->
         <div>
           <h4 class="text-amber-400 font-bold text-base tracking-wide mb-4">Location Map</h4>
           <div class="w-full h-56 rounded-lg overflow-hidden border border-emerald-800 shadow-md">
@@ -283,27 +341,21 @@
         <!-- Column 4: Contact Us -->
         <div class="space-y-3">
           <h4 class="text-amber-400 font-bold text-base tracking-wide mb-4">Contact Us</h4>
-          
-          <!-- Address -->
           <div class="flex items-start space-x-2 text-sm text-gray-200">
             <span class="text-base mt-0.5">🏠</span>
             <p class="leading-snug">
               <strong class="text-white block">Nalanda Concept School</strong>
               (SD Education Wing)<br>
-              Main Campus Road, Bihar
+              Rajgir Bypass Road, Bihar 803116
             </p>
           </div>
-
-          <!-- Phone Numbers -->
           <div class="flex items-start space-x-2 text-sm text-gray-200 pt-1">
             <span class="text-base mt-0.5">📞</span>
             <div class="space-y-0.5">
-              <p>+91 98765 43210</p>
-              <p>+91 98765 43211</p>
+              <a href="tel:+919876543210" class="hover:text-amber-300 block">+91 98765 43210</a>
+              <a href="tel:+919876543211" class="hover:text-amber-300 block">+91 98765 43211</a>
             </div>
           </div>
-
-          <!-- Email -->
           <div class="flex items-start space-x-2 text-sm text-gray-200 pt-1">
             <span class="text-base mt-0.5">✉️</span>
             <a href="mailto:info@nalandaconcept.edu" class="hover:text-amber-300 break-all transition">info@nalandaconcept.edu</a>
@@ -313,36 +365,28 @@
         <!-- Column 5: Visiting Hours & Social Links -->
         <div class="space-y-4">
           <h4 class="text-amber-400 font-bold text-base tracking-wide">Visiting Hours</h4>
-          
           <div class="text-sm text-gray-200 space-y-1">
-            <p class="flex items-center gap-1 font-semibold text-white">
-              <span>🕒</span> Office Hours:
-            </p>
+            <p class="flex items-center gap-1 font-semibold text-white"><span>🕒</span> Office Hours:</p>
             <p class="text-xs text-gray-300">Monday – Saturday</p>
             <p class="text-xs text-amber-200 font-medium">8:00 AM – 1:30 PM</p>
             <p class="text-xs text-amber-200 font-medium">2:30 PM – 5:00 PM</p>
           </div>
-
-          <!-- Social Icons -->
           <div class="pt-2">
             <h5 class="text-amber-400 font-bold text-sm mb-2">Follow us on</h5>
             <div class="flex items-center space-x-3">
-              <a href="#" class="w-8 h-8 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center text-white text-xs font-bold transition">▶</a>
-              <a href="#" class="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white text-xs font-bold transition">f</a>
-              <a href="#" class="w-8 h-8 rounded-full bg-sky-500 hover:bg-sky-600 flex items-center justify-center text-white text-xs font-bold transition">in</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center text-white text-xs font-bold transition">▶</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white text-xs font-bold transition">f</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-sky-500 hover:bg-sky-600 flex items-center justify-center text-white text-xs font-bold transition">in</a>
             </div>
           </div>
-
-          <!-- Terms & Privacy -->
           <div class="text-xs text-amber-200/80 space-y-1 pt-1">
-            <a href="terms.html" class="block hover:text-amber-300 transition">Terms & Conditions</a>
-            <a href="privacy.html" class="block hover:text-amber-300 transition">Privacy Policy</a>
+            <button onclick="alert('Terms & Conditions: Nalanda Concept School - Academic Session 2026-27.')" class="block hover:text-amber-300 transition text-left">Terms & Conditions</button>
+            <button onclick="alert('Privacy Policy: All student records are securely maintained in accordance with institutional guidelines.')" class="block hover:text-amber-300 transition text-left">Privacy Policy</button>
           </div>
         </div>
 
       </div>
 
-      <!-- Bottom Copyright Bar -->
       <div class="border-t border-emerald-900/80 pt-4 text-center text-xs text-gray-300">
         © Copyright 2026 <strong>Nalanda Concept School (SD Education)</strong>. All Rights Reserved.
       </div>
@@ -350,7 +394,62 @@
     </div>
   </footer>
 
-  <!-- Link to the external JavaScript file -->
+  <!-- ========================================== -->
+  <!-- 7. INTERACTIVE ADMISSION MODAL             -->
+  <!-- ========================================== -->
+  <div id="admission-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-emerald-100 animate-fade-in">
+      <button onclick="closeAdmissionModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold cursor-pointer">✕</button>
+      
+      <div class="text-center mb-6">
+        <span class="text-[10px] font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full">Admissions 2026–27</span>
+        <h3 class="text-xl sm:text-2xl font-extrabold text-emerald-900 mt-2">Apply for Admission</h3>
+        <p class="text-xs text-gray-500 mt-1">Fill out this quick form and our admissions desk will contact you.</p>
+      </div>
+
+      <form id="admission-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">Student's Full Name</label>
+          <input type="text" id="studentName" required placeholder="Enter student name" class="w-full text-sm px-3.5 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Applying for Class</label>
+            <select id="studentClass" required class="w-full text-sm px-3.5 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:outline-none bg-white">
+              <option value="">Select Class</option>
+              <option value="Class 1">Class I</option>
+              <option value="Class 2">Class II</option>
+              <option value="Class 3">Class III</option>
+              <option value="Class 4">Class IV</option>
+              <option value="Class 5">Class V</option>
+              <option value="Class 6">Class VI</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 mb-1">Parent's Phone Number</label>
+            <input type="tel" id="phone" required placeholder="10-digit number" class="w-full text-sm px-3.5 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-700 mb-1">Target Exam (Optional)</label>
+          <select id="targetExam" class="w-full text-sm px-3.5 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-600 focus:outline-none bg-white">
+            <option value="General">Regular Schooling</option>
+            <option value="Navodaya">JNV (Navodaya) Preparation</option>
+            <option value="Sainik">Sainik School Preparation</option>
+            <option value="Netarhat">Netarhat / Simultala</option>
+            <option value="RK Mission">R.K. Mission</option>
+          </select>
+        </div>
+
+        <button id="submitBtn" type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition cursor-pointer">
+          Submit Application
+        </button>
+      </form>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
